@@ -1,14 +1,6 @@
 Apples x 3
 Pears x 4
-Pears x 4
 Pineapples x 9
 Cherries x 2
 Strawberries x 5
 Watermelon x 1
-<<<<<<< master
-Cucumbers x 2
-Strawberries x 5
-=======
-Cherries x 2
-Strawberries x 5
->>>>>>> local
