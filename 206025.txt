@@ -1,0 +1,260 @@
+1.Најпрвин е искористена командата:
+	git clone (Со што е клониран репозиториумиот локално на нашата машина)
+
+2.Според барањето во чекор 5 искористени се две команди: 
+	git add (Со оваа команда shopping_list.txt се додаде во staging area)
+	git commit -m (Потоа со извршување на ова наредба shopping_list.txt од staging area оди во unmodified со што е
+ 		       сепремна за да и се исврши push и со тоа се испрајча на remote repo)
+
+3.Во овој чекор е искористена само наредбата 
+	git commit -m (По исвршените промени во shopping_list.txt од unmodified е преместена во фазата modified па со оваа команда повторно се враќа во unmodified)
+
+4.git checkout -b "name" е командата со која креираме нови гранки.
+
+5.Барање број 8:
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        206006.txt
+        shopping_list.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ git add shopping_list.txt
+
+
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ git commit -m "Add 5 items to the shopping list"
+[master 872594b] Add 5 items to the shopping list
+ 1 file changed, 5 insertions(+)
+ create mode 100644 shopping_list.txt
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ apple x 2
+bash: apple: command not found
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ git add shopping_list.txt
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ git commit -m "Add quantities to the items."
+[master 93fe3ef] Add quantities to the items.
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ git checkout -b branch1
+Switched to a new branch 'branch1'
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ git checkout -b branch2
+Switched to a new branch 'branch2'
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$
+6.Синхронизацијата на сите гранки со одалечениот репозиториум ја вршиме со наредбата:
+	git push origin "branch name"
+
+7.Префрлањето до една на друга гранка се врши со командата:
+	git checkout "branch name"
+9.
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ git checkout -b branch1
+Switched to a new branch 'branch1'
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ git checkout -b branch2
+Switched to a new branch 'branch2'
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ git push
+
+
+
+
+
+6 Барање број 17
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ git checkout -b branch1
+Switched to a new branch 'branch1'
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ git checkout -b branch2
+Switched to a new branch 'branch2'
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ git push
+fatal: The current branch branch2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin branch2
+
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ git checkout -b master
+fatal: a branch named 'master' already exists
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 648 bytes | 648.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/saraselja/SI_2022_lab1_206025.git
+   6910ef5..93fe3ef  master -> master
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/OneDrive/Desktop/SI_2022_lab1_206025 (master)$ git checkout branch1
+Switched to branch 'branch1'
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (branch1)
+$ git add shopping_list.txt
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (branch1)
+$ git commit "Change quantity of item #5"
+error: pathspec 'Change quantity of item #5' did not match any file(s) known to git
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (branch1)
+$ git commit -m "Change quantity of item #5"
+[branch1 9dd573f] Change quantity of item #5
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (branch1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (master)
+$ git add shopping_list.txt
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (master)
+$ git commit -m "Change quantity of item #2"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   shopping_list.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        206006.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (master)
+$ git add shopping_list.txt
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (master)
+$ git commit -m "Change quantity of item #2"
+[master 844357b] Change quantity of item #2
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 343 bytes | 343.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/YllzaG/SI_2022_lab1_206006.git
+   93fe3ef..844357b  master -> master
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (master)
+$ git checkout branch1
+Switched to branch 'branch1'
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (branch1)
+$ git push
+fatal: The current branch branch1 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin branch1
+
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (branch1)
+$ git push --set-upstream origin branch1
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 341 bytes | 341.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'branch1' on GitHub by visiting:
+remote:      https://github.com/saraselja/SI_2022_lab1_206025/pull/new/branch1
+remote:
+To https://github.com/saraselja/SI_2022_lab1_206025.git
+ * [new branch]      branch1 -> branch1
+branch 'branch1' set up to track 'origin/branch1'.
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (branch1)
+$ git checkout branch2
+Switched to branch 'branch2'
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (branch2)
+$ git push
+fatal: The current branch branch2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin branch2
+
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (branch2)
+$ --set-upstream origin branch2
+bash: --set-upstream: command not found
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (branch2)
+$ --set-upstream origin branch2
+bash: --set-upstream: command not found
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025(branch2)
+$ git push --set-upstream origin branch2
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'branch2' on GitHub by visiting:
+remote:      https://github.com/saraselja/SI_2022_lab1_206025/pull/new/branch2
+remote:
+To https://github.com/saraselja/SI_2022_lab1_206025.git
+ * [new branch]      branch2 -> branch2
+branch 'branch2' set up to track 'origin/branch2'.
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (branch2)
+$ git add shopping_list.txt
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (branch2)
+$ git commit -m "Modify item #4"
+[branch2 6e0d240] Modify item #4
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (branch2)
+
+
+19.
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (branch2)
+$ git add shopping_list.txt
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (branch2)
+$ git commit -m "Modify item #4"
+[branch2 6e0d240] Modify item #4
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (branch2)
+$ git add shopping_list.txt
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (branch2)
+$ git commit -m "Modify item #4 and add item #6"
+[branch2 1ded80b] Modify item #4 and add item #6
+ 1 file changed, 1 insertion(+)
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025(branch2)
+$
+
+
+
+
+21.Спојување
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (master|MERGING)
+$ git add shopping_list.txt
+
+saras@DESKTOP-GL3LFOQ MINGW64 ~/Desktop/SI_2022_lab1_206025 (master|MERGING)
+$ git commit -m "Merge branch branch2"
+[master d8fc9a9] Merg
