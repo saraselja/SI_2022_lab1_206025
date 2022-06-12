@@ -1,5 +1,5 @@
 Apples x 3
-Pears x 6
+Pears x 4
 Pineapples x 9
 Cucumbers x 2
-Strawberries x 3
+Strawberries x 5
